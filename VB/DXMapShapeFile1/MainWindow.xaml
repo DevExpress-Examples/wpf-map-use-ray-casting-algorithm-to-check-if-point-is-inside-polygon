@@ -1,0 +1,14 @@
+﻿<Window xmlns:dxm="http://schemas.devexpress.com/winfx/2008/xaml/map"  x:Class="DXMapShapeFile1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <dxm:MapControl Name="mapControl" >
+            <dxm:VectorLayer Name="vectorLayer" MouseDoubleClick="vLayer_MouseDoubleClick" EnableSelection="False"  >
+                <dxm:VectorLayer.Data >
+                    <dxm:ShapefileDataAdapter  FileUri="DXMapShapeFile1;component/ShapeFile/Countries.shp" />
+                </dxm:VectorLayer.Data>
+            </dxm:VectorLayer>            
+        </dxm:MapControl>        
+    </Grid>
+</Window>
