@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2012
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DXMapShapeFile1", "DXMapShapeFile1\DXMapShapeFile1.vbproj", "{A8A23588-8830-43B8-B075-2E4C2139C356}"
+# Visual Studio 16
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DXMapShapeFile1", "DXMapShapeFile1\DXMapShapeFile1.Net5.csproj", "{A8A23588-8830-43B8-B075-2E4C2139C356}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
