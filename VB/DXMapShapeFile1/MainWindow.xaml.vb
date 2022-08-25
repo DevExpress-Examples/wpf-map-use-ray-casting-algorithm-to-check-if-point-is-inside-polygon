@@ -1,37 +1,27 @@
-﻿Imports DevExpress.Xpf.Map
-Imports System
-Imports System.Collections.Generic
+Imports DevExpress.Xpf.Map
 Imports System.Linq
-Imports System.Text
 Imports System.Windows
 Imports System.Windows.Controls
-Imports System.Windows.Data
-Imports System.Windows.Documents
 Imports System.Windows.Input
-Imports System.Windows.Media
-Imports System.Windows.Media.Imaging
-Imports System.Windows.Navigation
-Imports System.Windows.Shapes
 
 Namespace DXMapShapeFile1
+
     ''' <summary>
     ''' Interaction logic for MainWindow.xaml
     ''' </summary>
-    Partial Public Class MainWindow
+    Public Partial Class MainWindow
         Inherits Window
 
         Public Sub New()
-            InitializeComponent()
+            Me.InitializeComponent()
         End Sub
 
         Private Sub vLayer_MouseDoubleClick(ByVal sender As Object, ByVal e As MouseButtonEventArgs)
-            Dim point As GeoPoint = CType(mapControl.ScreenPointToCoordPoint(e.GetPosition(mapControl)), GeoPoint)
-            Dim hi = mapControl.CalcHitInfo(e.GetPosition(mapControl))
-            For Each item In vectorLayer.Data.DisplayItems
-                If IsPointInsideItem(item, point) Then
-                    Me.Title = item.Attributes("NAME").Value.ToString()
-                End If
-            Next item
+            Dim point As GeoPoint = CType(Me.mapControl.ScreenPointToCoordPoint(e.GetPosition(Me.mapControl)), GeoPoint)
+            Dim hi = Me.mapControl.CalcHitInfo(e.GetPosition(Me.mapControl))
+            For Each item In Me.vectorLayer.Data.DisplayItems
+                If IsPointInsideItem(item, point) Then Title = item.Attributes("NAME").Value.ToString()
+            Next
         End Sub
 
         Private Function IsPointInsideItem(ByVal item As MapItem, ByVal point As GeoPoint) As Boolean
@@ -39,16 +29,17 @@ Namespace DXMapShapeFile1
             If polygon IsNot Nothing Then
                 Return IsPointInside(polygon.Points.Cast(Of GeoPoint)().ToArray(), point)
             End If
+
             Dim path As MapPath = TryCast(item, MapPath)
             If path IsNot Nothing Then
                 Dim segments = CType(path.Data, MapPathGeometry).Figures.SelectMany(Function(f) f.Segments).Cast(Of MapPolyLineSegment)()
                 Return segments.Any(Function(segment) IsPointInside(segment.Points.Cast(Of GeoPoint)().ToArray(), point))
-
             End If
+
             Return False
         End Function
 
-        Private Function IsPointInside(ByVal polygon() As GeoPoint, ByVal testPoint As GeoPoint) As Boolean
+        Private Function IsPointInside(ByVal polygon As GeoPoint(), ByVal testPoint As GeoPoint) As Boolean
             Dim result As Boolean = False
             Dim j As Integer = polygon.Count() - 1
             For i As Integer = 0 To polygon.Count() - 1
@@ -57,12 +48,11 @@ Namespace DXMapShapeFile1
                         result = Not result
                     End If
                 End If
+
                 j = i
-            Next i
+            Next
+
             Return result
         End Function
-
-
-
     End Class
 End Namespace
