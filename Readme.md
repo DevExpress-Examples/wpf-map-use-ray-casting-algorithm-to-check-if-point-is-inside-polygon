@@ -34,7 +34,7 @@ In this example, the [ShapefileDataAdapter](https://docs.devexpress.com/WPF/DevE
 * [How to colorize map contours loaded from Shapefiles using the Graph colorizer](https://github.com/DevExpress-Examples/how-to-colorize-map-contours-loaded-from-shapefiles-using-the-graph-colorizer-e4719)
 * [How to customize the appearance of a map shape element](https://github.com/DevExpress-Examples/how-to-customize-the-appearance-of-a-map-shape-element-e4263)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-map-use-ray-casting-algorithm-to-check-if-point-is-inside-polygon&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-map-use-ray-casting-algorithm-to-check-if-point-is-inside-polygon&~~~was_helpful=no)
 
